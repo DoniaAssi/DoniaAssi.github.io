@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Donia Assi | Academic Website</title>
+    <title>Donia Assi | Software Engineer</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             color: #222;
-            background: white;
+            background: #fff;
             line-height: 1.7;
         }
 
-        /* Navigation */
+        /* ===== Navigation ===== */
+
         nav {
             height: 70px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 8%;
+            padding: 0 7%;
             border-bottom: 1px solid #eee;
             position: sticky;
             top: 0;
-            background: white;
-            z-index: 100;
+            background: rgba(255, 255, 255, 0.97);
+            z-index: 1000;
         }
 
-        nav .logo {
-            font-size: 22px;
+        .logo {
+            font-size: 23px;
             font-weight: bold;
             color: #1976d2;
         }
@@ -56,7 +58,8 @@
             color: #1976d2;
         }
 
-        /* Hero */
+        /* ===== Hero ===== */
+
         .hero {
             max-width: 1200px;
             margin: 80px auto;
@@ -71,23 +74,34 @@
             text-align: center;
         }
 
-        .profile img {
+        .photo-placeholder {
             width: 270px;
             height: 270px;
-            object-fit: cover;
+            margin: auto;
             border-radius: 50%;
-            background: #eee;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 18px;
         }
 
         .profile h1 {
             margin-top: 25px;
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 500;
         }
 
-        .profile p {
+        .profile .job {
             color: #777;
             margin-top: 8px;
+            font-size: 17px;
+        }
+
+        .profile .university {
+            color: #777;
+            margin-top: 3px;
         }
 
         .social {
@@ -100,8 +114,12 @@
             text-decoration: none;
         }
 
+        .social a:hover {
+            text-decoration: underline;
+        }
+
         .bio h2 {
-            font-size: 42px;
+            font-size: 44px;
             font-weight: 400;
             margin-bottom: 20px;
         }
@@ -112,7 +130,8 @@
             margin-bottom: 20px;
         }
 
-        /* Sections */
+        /* ===== Sections ===== */
+
         section {
             max-width: 1000px;
             margin: 90px auto;
@@ -120,10 +139,18 @@
         }
 
         section h2 {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 400;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
+
+        .section-intro {
+            color: #555;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        /* ===== Cards ===== */
 
         .card {
             padding: 25px;
@@ -133,23 +160,104 @@
         }
 
         .card h3 {
+            font-size: 21px;
             margin-bottom: 8px;
+        }
+
+        .card .date {
+            color: #1976d2;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
 
         .card p {
             color: #555;
         }
 
-        /* Footer */
+        /* ===== Skills ===== */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: #fafafa;
+            padding: 22px;
+            border-radius: 5px;
+        }
+
+        .skill-box h3 {
+            margin-bottom: 10px;
+            color: #1976d2;
+        }
+
+        .skill-box p {
+            color: #555;
+        }
+
+        /* ===== Projects ===== */
+
+        .project {
+            margin-bottom: 35px;
+        }
+
+        .project h3 {
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .project .project-type {
+            color: #1976d2;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .technologies {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* ===== Contact ===== */
+
+        .contact-box {
+            background: #fafafa;
+            padding: 30px;
+        }
+
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+
+        .contact-box a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+
+        /* ===== Footer ===== */
+
         footer {
             text-align: center;
             padding: 40px;
             border-top: 1px solid #eee;
             color: #777;
+            margin-top: 80px;
         }
 
-        /* Mobile */
+        /* ===== Mobile ===== */
+
         @media (max-width: 800px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
             nav ul {
                 display: none;
             }
@@ -157,15 +265,19 @@
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
+                margin-top: 50px;
             }
 
             .bio h2 {
-                font-size: 34px;
+                font-size: 36px;
             }
 
-            .profile img {
-                width: 220px;
-                height: 220px;
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 0 25px;
             }
         }
     </style>
@@ -173,53 +285,60 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- ================= NAVIGATION ================= -->
+
     <nav>
-        <div class="logo">Donia Assi</div>
+
+        <div class="logo">
+            Donia Assi
+        </div>
 
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#publications">Publications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
     </nav>
 
 
-    <!-- Home -->
+    <!-- ================= HOME ================= -->
+
     <div class="hero" id="home">
 
         <div class="profile">
 
-            <!-- We will add your photo later -->
-
-            <div style="
-                width:270px;
-                height:270px;
-                border-radius:50%;
-                background:#eeeeee;
-                margin:auto;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:#999;
-                font-size:18px;
-            ">
+            <div class="photo-placeholder">
                 Your Photo
             </div>
 
             <h1>Donia Assi</h1>
 
-            <p>Computer Science Student</p>
+            <p class="job">
+                Software Engineer
+            </p>
 
-            <p>Birzeit University</p>
+            <p class="university">
+                Birzeit University
+            </p>
 
             <div class="social">
-                <a href="#">GitHub</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Email</a>
+
+                <a href="https://github.com/DoniaAssi" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="https://www.linkedin.com/in/donia-assi-871b09386/" target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="mailto:doniaassi874@gmail.com">
+                    Email
+                </a>
+
             </div>
 
         </div>
@@ -230,21 +349,21 @@
             <h2>Biography</h2>
 
             <p>
-                Hello! I am Donia Assi, a Computer Science student
-                interested in technology, software development,
-                artificial intelligence and data science.
+                I am Donia Assi, a Computer Science graduate from
+                Birzeit University with hands-on experience in Full Stack
+                Development and Software Quality Assurance.
             </p>
 
             <p>
-                I am passionate about learning new technologies,
-                building useful applications and working on
-                interesting software projects.
+                I have experience building web and mobile applications,
+                developing RESTful APIs, testing software, and working
+                with modern development tools and technologies.
             </p>
 
             <p>
-                Welcome to my personal academic website.
-                Here you can find information about my education,
-                research interests, projects and publications.
+                I am passionate about building high-quality software,
+                learning new technologies, and developing reliable
+                and user-focused applications.
             </p>
 
         </div>
@@ -252,29 +371,158 @@
     </div>
 
 
-    <!-- About -->
+    <!-- ================= ABOUT ================= -->
+
     <section id="about">
 
         <h2>About Me</h2>
+
+        <p class="section-intro">
+
+            Computer Science graduate from Birzeit University with
+            practical experience in full-stack development and
+            software quality assurance.
+
+        </p>
 
         <div class="card">
 
             <h3>Education</h3>
 
+            <div class="date">
+                2022 – 2026
+            </div>
+
             <p>
-                Computer Science<br>
+                Bachelor of Science in Computer Science
+                <br>
                 Birzeit University
             </p>
 
         </div>
 
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <h2>Technical Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skill-box">
+
+                <h3>Languages</h3>
+
+                <p>
+                    Java · JavaScript · TypeScript · SQL
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <h3>Frontend</h3>
+
+                <p>
+                    React · Angular · Flutter · HTML5 · CSS3
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <h3>Backend</h3>
+
+                <p>
+                    Spring Boot · Node.js · Express.js · REST APIs
+                    · Spring Security · JWT · JPA/Hibernate
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <h3>Database</h3>
+
+                <p>
+                    MySQL
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <h3>Tools</h3>
+
+                <p>
+                    Git · GitHub · Postman · Docker · Figma
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <h3>Software Testing</h3>
+
+                <p>
+                    Jira · Selenium · Katalon · JMeter ·
+                    Manual Testing · API Testing
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section id="experience">
+
+        <h2>Professional Experience</h2>
+
         <div class="card">
 
-            <h3>Interests</h3>
+            <h3>
+                Full Stack Trainee | Aurora Technologies
+            </h3>
+
+            <div class="date">
+                Jul 2025 – Sep 2025
+            </div>
 
             <p>
-                Artificial Intelligence · Machine Learning ·
-                Software Engineering · Data Science
+                Developed responsive web applications using Angular,
+                HTML, CSS, JavaScript, and TypeScript.
+            </p>
+
+            <p>
+                Built secure RESTful APIs using Spring Boot,
+                Spring Security, JPA/Hibernate, and JWT.
+            </p>
+
+            <p>
+                Collaborated with developers using Git/GitHub,
+                Pull Requests, and Code Reviews.
+            </p>
+
+            <p>
+                Tested APIs with Postman and participated in
+                debugging and software maintenance.
+            </p>
+
+            <p>
+                Worked on real-world projects in an Agile team
+                environment.
             </p>
 
         </div>
@@ -282,45 +530,128 @@
     </section>
 
 
-    <!-- Research -->
-    <section id="research">
+    <!-- ================= PROJECTS ================= -->
 
-        <h2>Research</h2>
-
-        <div class="card">
-
-            <h3>Research Interests</h3>
-
-            <p>
-                Add your research interests and academic work here.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- Projects -->
     <section id="projects">
 
         <h2>Projects</h2>
 
-        <div class="card">
 
-            <h3>Project 1</h3>
+        <!-- CareLink -->
+
+        <div class="project">
+
+            <h3>
+                CareLink – Comprehensive Home Healthcare Platform
+            </h3>
+
+            <div class="project-type">
+                Graduation Project
+            </div>
 
             <p>
-                Add your project description here.
+                Developed a full-stack home healthcare platform
+                supporting Patients, Doctors, Nurses, and
+                Administrators.
             </p>
+
+            <p>
+                Built responsive mobile interfaces using Flutter
+                with full Arabic/English localization.
+            </p>
+
+            <p>
+                Developed secure RESTful APIs with JWT authentication
+                and integrated a MySQL database.
+            </p>
+
+            <p>
+                Implemented an intelligent healthcare provider
+                recommendation system based on specialization,
+                location, ratings, and service compatibility.
+            </p>
+
+            <p>
+                Designed an admin dashboard for provider verification,
+                booking management, payment oversight, analytics,
+                and pricing management.
+            </p>
+
+            <div class="technologies">
+                <strong>Technologies:</strong>
+                Flutter · Node.js · Express.js · MySQL · REST APIs
+                · JWT · Git/GitHub · Geolocation · Real-time Notifications
+            </div>
 
         </div>
 
-        <div class="card">
 
-            <h3>Project 2</h3>
+        <!-- LRMIS -->
+
+        <div class="project">
+
+            <h3>
+                Land Registration Management Information System (LRMIS)
+            </h3>
+
+            <div class="project-type">
+                Academic Full Stack Web Application
+            </div>
 
             <p>
-                Add your project description here.
+                Developed the Surveyor Management Module, including
+                surveyor profiles, availability scheduling, workload
+                management, and automated task assignment.
+            </p>
+
+            <p>
+                Designed and developed the Surveyor Dashboard,
+                Live Parcel Map, and Analytics Dashboard for monitoring
+                survey activities and land registration statistics.
+            </p>
+
+            <p>
+                Integrated geospatial visualization using Leaflet,
+                OpenStreetMap, and GeoJSON to display parcel boundaries,
+                survey locations, and spatial data.
+            </p>
+
+            <div class="technologies">
+                <strong>Technologies:</strong>
+                React.js · FastAPI · Python · MongoDB · PyMongo
+                · REST APIs · JavaScript · HTML · CSS · Leaflet
+                · OpenStreetMap · GeoJSON
+            </div>
+
+        </div>
+
+
+        <!-- OrangeHRM -->
+
+        <div class="project">
+
+            <h3>
+                OrangeHRM – Software Testing & Quality Assurance
+            </h3>
+
+            <div class="project-type">
+                Academic Project
+            </div>
+
+            <p>
+                Designed and executed manual test cases,
+                documented defects, and performed regression
+                testing using Jira.
+            </p>
+
+            <p>
+                Performed automated functional testing using
+                Selenium/Katalon and performance/load testing
+                using JMeter.
+            </p>
+
+            <p>
+                Applied Black-Box and White-Box testing techniques.
             </p>
 
         </div>
@@ -328,37 +659,35 @@
     </section>
 
 
-    <!-- Publications -->
-    <section id="publications">
+    <!-- ================= CONTACT ================= -->
 
-        <h2>Publications</h2>
-
-        <div class="card">
-
-            <h3>Publication Title</h3>
-
-            <p>
-                Add your publications, papers or academic work here.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- Contact -->
     <section id="contact">
 
         <h2>Contact</h2>
 
-        <div class="card">
+        <div class="contact-box">
 
             <p>
-                Email: your-email@example.com
+                <strong>Email:</strong>
+                <a href="mailto:doniaassi874@gmail.com">
+                    doniaassi874@gmail.com
+                </a>
             </p>
 
             <p>
-                GitHub: github.com/DoniaAssi
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/donia-assi-871b09386/"
+                   target="_blank">
+                    LinkedIn Profile
+                </a>
+            </p>
+
+            <p>
+                <strong>GitHub:</strong>
+                <a href="https://github.com/DoniaAssi"
+                   target="_blank">
+                    github.com/DoniaAssi
+                </a>
             </p>
 
         </div>
@@ -366,9 +695,11 @@
     </section>
 
 
+    <!-- ================= FOOTER ================= -->
+
     <footer>
 
-        © 2026 Donia Assi · Academic Website
+        © 2026 Donia Assi · Software Engineer
 
     </footer>
 
